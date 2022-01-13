@@ -102,7 +102,8 @@ const Deck = (myProps) => {
         if (!down && trigger) {
             gone.add(index)
             // myProps.handleNewCard(cards[index > 0 ? index - 1 : cards.length - 1].title)
-            myProps.handleNewCard(index > 0 ? index - 1 : cards.length - 1)
+            // myProps.handleNewCard(index > 0 ? index - 1 : cards.length - 1)
+            myProps.minusOne()
         } // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
         api.start(i => {
             if (index !== i) return // We're only interested in changing spring-data for the current spring
@@ -140,7 +141,6 @@ const Deck = (myProps) => {
                                 backgroundImage: `url(${cards[i].url})`
                             }}
                         />
-                        <p className="text-white">{cards[i].title}</p>
                     </animated.div>
                 ))}
             </div>

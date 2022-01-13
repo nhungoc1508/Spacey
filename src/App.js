@@ -71,7 +71,6 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.state.display)
         const { DataisLoaded, items, imageUrls, cardTitle, explanation, display } = this.state;
         if (!DataisLoaded) return <div>
             <h1> Pleses wait some time.... </h1> </div>;
@@ -90,9 +89,9 @@ class App extends React.Component {
                     {/* <div className="py-6 bg-sky-300">
                         <p className="text-4xl text-right font-semibold w-100">Abc</p>
                     </div> */}
-                    <div className="py-6 grid">
-                        {/* <Text number={5} cards={items} flip={this.state.display} /> */}
-                        <TextNew card={items[display]} flip={false} />
+                    <div className="py-6">
+                        <Text number={5} cards={items} flip={this.state.display} />
+                        {/* <TextNew card={items[display]} flip={false} /> */}
                         {/* <p className="text-6xl text-right w-100 pt-5 pb-0">{cardTitle}</p>
                         <p className="text-sm text-right w-100 pt-0 pb-5">{explanation}</p>
                         <button className="border border-white justify-self-end px-5 rounded-lg h-12" onClick={this.refreshPage}>Load new images</button> */}

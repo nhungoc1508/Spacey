@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import { useSpring, animated } from 'react-spring'
 
 const TextNew = (props) => {
@@ -8,6 +9,10 @@ const TextNew = (props) => {
         to: { opacity: 1 },
         enter: { opacity: 1 },
         leave: { opacity: 0 }
+    })
+
+    useEffect(() => {
+        console.log("Inside useEffect")
     })
 
     return (

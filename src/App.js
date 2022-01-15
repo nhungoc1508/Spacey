@@ -72,8 +72,10 @@ class App extends React.Component {
 
     render() {
         const { DataisLoaded, items, imageUrls, cardTitle, explanation, display } = this.state;
-        if (!DataisLoaded) return <div>
-            <h1> Pleses wait some time.... </h1> </div>;
+        if (!DataisLoaded) return (
+            <main className={styles.container}>
+                <p className="text-5xl text-white font-serif">Spacey is loading</p>
+            </main>);
 
         return (
             // <main className="bg-gradient-to-b from-blueGray-900 to-sky-800 body-font h-screen">
@@ -89,12 +91,14 @@ class App extends React.Component {
                     {/* <div className="py-6 bg-sky-300">
                         <p className="text-4xl text-right font-semibold w-100">Abc</p>
                     </div> */}
-                    <div className="py-6">
-                        <Text number={5} cards={items} flip={this.state.display} />
+                    <div className="py-6 flex flex-wrap justify-end">
+                        <div className="h-5/6">
+                            <Text number={5} cards={items} flip={this.state.display} />
+                        </div>
+                        <button className="border border-white justify-self-end px-5 rounded-lg h-12" onClick={this.refreshPage}>Load new images</button>
                         {/* <TextNew card={items[display]} flip={false} /> */}
                         {/* <p className="text-6xl text-right w-100 pt-5 pb-0">{cardTitle}</p>
-                        <p className="text-sm text-right w-100 pt-0 pb-5">{explanation}</p>
-                        <button className="border border-white justify-self-end px-5 rounded-lg h-12" onClick={this.refreshPage}>Load new images</button> */}
+                        <p className="text-sm text-right w-100 pt-0 pb-5">{explanation}</p> */}
                     </div>
                 </div>
                 {/* <input type="text" onChange={this.handleChange}

@@ -18,14 +18,13 @@
 
 // export default Text;
 
-import { useSprings, animated } from 'react-spring'
+import { useSprings, animated, config } from 'react-spring'
 
 const Text = (props) => {
     const flip = Array(props.number).fill(true)
     flip[props.flip] = !flip[props.flip]
-    console.log(flip)
     const [springs, api] = useSprings(props.number, index => ({
-        config: { duration: 500 },
+        config: config.slow,
         to: { opacity: flip[index] ? 0 : 1, height: flip[index] ? 0 : 100 },
         from: { opacity: flip[index] ? 1 : 0, height: flip[index] ? 100 : 0 },
         immediate: flip[index]
@@ -39,9 +38,22 @@ const Text = (props) => {
     return (
         springs.map((styles, i) => (
             <div>
-                <div className="text-6xl text-right w-100 pt-5 pb-0">
-                    <animated.div style={styles}>{props.cards[i].title}</animated.div>
+                <div className="text-right w-100">
+                    <animated.div style={styles}>
+                        <div className="text-5xl">{props.cards[i].title}</div>
+                        <div className="py-5 text-cs text-sky-200">
+                            <div>Date: {props.cards[i].date}</div>
+                            {props.cards[i].copyright ? <div>&copy; {props.cards[i].copyright}</div> : <span></span>}
+                        </div>
+                        <div className="text-sm">{props.cards[i].explanation}</div>
+                    </animated.div>
                 </div>
+                {/* <div className="text-cs text-right text-gray-300">
+                    <animated.div style={styles}>Date: {props.cards[i].date}</animated.div>
+                </div> */}
+                {/* <div className="text-sm text-right w-100">
+                    <animated.div style={styles}>{props.cards[i].explanation}</animated.div>
+                </div> */}
                 {/* <div className="text-sm text-right w-100 pt-0 pb-5">
                     <animated.div style={{...styles, position: "absolute"}}>{props.cards[i].explanation}</animated.div>
                 </div> */}

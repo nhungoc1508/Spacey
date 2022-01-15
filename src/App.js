@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Deck from './Deck'
 import Text from './Text';
+import LikeBtn from './LikeBtn';
 import TextNew from './TextNew';
 import styles from './styles.module.css'
-import React from 'react';
 
 class App extends React.Component {
 
@@ -17,7 +17,8 @@ class App extends React.Component {
             imageUrls: [],
             DataisLoaded: false,
             cardTitle: "",
-            display: 0
+            display: 0,
+            likes: Array(5).fill(false)
         };
     }
 
@@ -66,12 +67,25 @@ class App extends React.Component {
         })
     }
 
+    likePost = () => {
+        console.log("Inside likePost")
+        this.setState(prevState => {
+            const updatedLikes = []
+            prevState.likes.forEach((value, key) => {
+                updatedLikes.push(key == prevState.display ? !value : value)
+            })
+            return {
+                likes: updatedLikes
+            }
+        })
+    }
+
     refreshPage() {
         window.location.reload(false);
     }
 
     render() {
-        const { DataisLoaded, items, imageUrls, cardTitle, explanation, display } = this.state;
+        const { DataisLoaded, items, imageUrls, cardTitle, explanation, display, likes } = this.state;
         if (!DataisLoaded) return (
             <main className={styles.container}>
                 <p className="text-5xl text-white font-serif">Spacey is loading</p>
@@ -93,8 +107,10 @@ class App extends React.Component {
                     </div> */}
                     <div className="py-6 flex flex-wrap justify-end">
                         <div className="h-5/6">
-                            <Text number={5} cards={items} flip={this.state.display} />
+                            <Text number={5} cards={items} flip={display} />
                         </div>
+                        {/* <button id="like-button" className="text-2xl justify-self-end mx-10 rounded-lg h-12" onClick={this.likePost}><FontAwesomeIcon className={this.state.likes[display] ? "text-rose-600" : "text-white"} icon={faHeart} /></button> */}
+                        <LikeBtn liked={likes[display]} likePost={this.likePost}/>
                         <button className="border border-white justify-self-end px-5 rounded-lg h-12" onClick={this.refreshPage}>Load new images</button>
                         {/* <TextNew card={items[display]} flip={false} /> */}
                         {/* <p className="text-6xl text-right w-100 pt-5 pb-0">{cardTitle}</p>

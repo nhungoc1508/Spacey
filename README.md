@@ -2,6 +2,8 @@
 
 **Spacey** is a webpage showing images pulled randomly from [NASA's Astronomy Picture of the Day API](https://api.nasa.gov/).
 
+Drag and flick the cards to go through the images.
+
 ## Demos from the page
 
 <img src="https://github.com/nhungoc1508/Spacey/blob/master/demos/demo0.png" width=800></img>

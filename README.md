@@ -25,7 +25,7 @@ The webpage will run on [http://localhost:3000](http://localhost:3000).
 
 ## References and credits
 
-The webpage makes extensive use of [react-spring](https://react-spring.io/) and demo of `useSpring` (https://codesandbox.io/embed/n9vo1my91p).
+The webpage makes extensive use of [react-spring](https://react-spring.io/) and demo of `useSpring` (https://codesandbox.io/embed/j0y0vpz59).
 
 Favicon: <a href="https://iconscout.com/icons/space-exploration" target="_blank">Space Exploration Icon</a> by <a href="https://iconscout.com/contributors/chanut-is-industries" target="_blank">Chanut Is Industries</a>
 

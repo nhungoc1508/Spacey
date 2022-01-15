@@ -9,7 +9,7 @@
 
 ## Hosted page
 
-The project is deployed using _ and is available at: _
+The project is deployed using Heroku and is available at https://spacey-spacey.herokuapp.com/.
 
 ## Run locally
 

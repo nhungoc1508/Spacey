@@ -4,6 +4,8 @@
 
 Drag and flick the cards to go through the images.
 
+Created for Shopify Frontend Developer Intern Challenge 2022 ([link to task description](https://docs.google.com/document/d/13zXpyrC2yGxoLXKktxw2VJG2Jw8SdUfliLM-bYQLjqE/edit#)).
+
 ## Demos from the page
 
 <img src="https://github.com/nhungoc1508/Spacey/blob/master/demos/demo0.png" width=800></img>
